@@ -1,0 +1,54 @@
+﻿@model FitnessCenter.Models.Course
+
+<head>
+    <link href="~/css/products.css" rel="stylesheet" />
+</head>
+<section class="products">
+    <div class="container">
+        <div class="row">
+            <h2> تفاصيل الكورس</h2>
+            <div class="col-md-5">
+                <div class="info">
+                    <div class="description">
+                        <h5>اسم الكورس</h5>
+                        <h6> @Html.DisplayFor(model => model.courseTitle)</h6>
+                    </div>
+                    <div class="description">
+                        <img src="~/Uploads/@Html.DisplayFor(model=>model.courseImage)" class="thumbnail" style="width:180px;height:180px;" />
+                    </div>
+                    <div class="description">
+                        <h5>وصف عن الكورس</h5>
+                        <p> @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(Model => Model.courseContent).ToString()))</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-5">
+                <div class="info">
+                    <div class="name">
+                        <h5>اسم الكوتش</h5>
+                        <h6> @Html.DisplayFor(model => model.coachName)</h6>
+                    </div>
+                    <div class="description">
+                        <div class="photo">
+                            <img src="~/Uploads/@Html.DisplayFor(model=>model.coachImage)" class="thumbnail" style="width:180px;height:180px;" />
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <h5> خبره الكوتش</h5>
+                        <p>  @Html.DisplayFor(model => model.coachDescribtion)</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p style="text-align: left">
+            <a href="~/Courses/Index" class="nav-link">العوده للصفحه التحكم</a>
+        </p>
+    </div>
+    <br />
+</section>
+@*<script src="~/js/lib/bootstrap.bundle.min.js"></script>*@
+
+

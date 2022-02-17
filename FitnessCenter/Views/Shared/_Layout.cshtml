@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    @*<meta name="viewport" content="width=device-width,initial scale=1" />*@
+    <title>@Page.Title</title>
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    @*<link href="~/Content/Site.css" rel="stylesheet" />*@
+
+    @*@Styles.Render("~/Content/css")*@
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="~/css/lib/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/assets/logo.svg" type="image/x-icon">
+
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+        <title>@ViewBag.Title - Fit2Fat</title>
+
+        @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="~/Content/Site.css" rel="stylesheet" />*@
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <section class="navbarr p-0">
+        <nav class="navbar navbar-expand-lg fixed-top bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="~/Home/Index">
+             
+                    <img src="~/assets/logo.svg" />
+                </a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="35"
+                             height="35"
+                             fill="currentColor"
+                             class="bi bi-list"
+                             viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            @*<a class="nav-link active" href="index.html">الصفحة الرئيسية</a>*@
+                            <a>@Html.ActionLink("الصفحة الرئيسية", "Index", "Home", " ", new { @class = "nav-link active" })</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  @*href="~/Home/Index"*@ href="#services">خدمتنا</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a href="~/Shopping/Index" class="nav-link">منتجاتنا</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a href="~/Home/Course" class="nav-link">الكورسات</a>
+                        </li>
+                        <li class="nav-item">
+
+                            @Html.ActionLink("تواصل معنا", "Contact", "Home", " ", new { @class = "nav-link" })
+                        </li>
+
+                        <a href="~/Shopping/ShoppingCart">
+                            <span class="icon">
+                                <span class="number" id="cartItem">@Session["CartCounter"]</span>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="30"
+                                     height="30"
+                                     fill="currentColor"
+                                     class="bi bi-cart-plus-fill"
+                                     viewBox="0 0 16 16">
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        @*@Html.Partial("_ShoppingCart")*@
+
+
+                        @*<li>
+            @Html.Partial("_ShoppingCart")
+                               <a href="Shopping/ShoppingCart">
+        </li>
+
+
+
+
+                        @*<a href="cart.html">
+            <span class="icon">
+                <span class="number">3</span>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="30"
+                     height="30"
+                     fill="currentColor"
+                     class="bi bi-cart-plus-fill"
+                     viewBox="0 0 16 16">
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
+                </svg>
+            </span>
+        </a>
+
+                        @*</span>
+                        @*</a>*@
+
+                    </ul>
+                   
+                        @Html.Partial("_LoginPartial")
+                    
+
+
+
+
+
+
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>-->
+    @*<a href="~/Home" class="navbar-brand">
+            <img src="~/images/img4.png" class="logo-size" />
+        </a>*@
+    <!--@Html.ActionLink("Fit 2 Fat", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    </div>
+
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Home", "Index", "Home", " ", new { @class = "glyphicon glyphicon-home" })</li>
+
+            <li>@Html.ActionLink("About", "About", "Home", " ", new { @class = "glyphicon glyphicon-info-sign " })</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home", " ", new { @class = "glyphicon glyphicon-envelope" })</li>-->
+    @*<li>@Html.ActionLink("Item", "Index", "Home", " ", new { @class = "glyphicon glyphicon-envelope" })</li>*@
+    <!--<li>@Html.ActionLink("Shopping", "Index", "Home", " ", new { @class = "glyphicon glyphicon-envelope" })</li>
+    <li> <a href="~/Shopping/Index" class="btn btn-primary btn-block">Products</a></li>
+    <li> <a href="~/Item/Index" class="btn btn-primary btn-block">Items</a></li>-->
+    @*<a href="~/Views/Item/Index.cshtml">~/Views/Item/Index.cshtml</a>*@
+    <!--<li><a href="~/Home/Course" class="btn btn-primary btn-block"> Courses</a></li>
+
+                </ul>
+
+                Html.Partial("_LoginPartial")
+
+                Html.Partial("_ShoppingCart")
+            </div>
+        </div>
+    </div>-->
+    <div class="container ">
+        <div class="row" style="min-height:550px;">
+            @RenderBody()
+        </div>
+
+       
+
+    </div>
+    @* Footer *@
+    <!--<footer class="myfooter">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3><i class="glyphicon glyphicon-question-sign"></i>who are we?</h3>
+                    <p>
+                        The best part about finding your dream job-->
+    @*on Receptix is that we cover beyond full-time and part-time jobs. You can find work from home Best hris systems for small businesses jobs as well. Best hris systems for small businesses work from home jobs have the advantage of a broad outreach. This essentially means you can work for any company, any office, in any city. Hence, the reach for new opportunities for Best hris systems for small businesses jobs has multiplied in number.*@
+    <!--</p>
+            </div>
+            <div class="col-md-4">
+                <h3><i class="glyphicon glyphicon-globe"></i>important links</h3>
+                <ul>
+                    <li><a href="#">Public sector jobs</a></li>
+                    <li><a href="#">Private  sector jobs</a></li>
+                    <li><a href="#">Jobs abroad</a></li>
+                    <li><a href="#">Different jobs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3><i class="glyphicon glyphicon-envelope"></i>Connect with us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitters</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Leave a messages</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>-->
+<footer class="navbar-expand-lg fixed-bottom">
+    
+    <div class="footer"> جميع الحقوق محفوظة ل Fat 2 Fit team &copy; @DateTime.Now.Year </div>
+</footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>

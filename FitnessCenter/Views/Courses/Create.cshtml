@@ -1,0 +1,111 @@
+﻿@model FitnessCenter.Models.Course
+<head>
+    <link rel="stylesheet" href="~/css/products.css" />
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+</head>
+<section class="products">
+    <div class="container">
+        @using (Html.BeginForm("Create", "Courses", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="alert alert-danger" id="error-div" style="display:none">
+                    <span id="view-err">
+
+                    </span>
+                </div>
+                <h3 class="panel-heading">انشاء كورس جديد....!</h3>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("اسم الكورس", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.courseTitle, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.courseTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("محتوي الكورس", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.courseContent, new { htmlAttributes = new { @class = "form-control" }, @id = "CourseContent" })
+                        @Html.ValidationMessageFor(model => model.courseContent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("صوره الكورس", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="uploadCourse" class="form-control" id="courseImage" />
+                        @Html.ValidationMessageFor(model => model.courseImage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("اسم الكوتش", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.coachName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.coachName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("خبره الكوتش", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.coachDescribtion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.coachDescribtion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("صوره الكوتش", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="uploadCoach" class="form-control" id="coachImage" />
+                        @Html.ValidationMessageFor(model => model.coachImage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="حفظ" class="btn btn-orange" id="save" />
+                </div>
+            </div>
+        }
+        <p style="text-align: left">
+            <a href="~/Courses/Index" class="nav-link">العوده للصفحه التحكم</a>
+        </p>
+        <br />
+    </div>
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+@section scripts{
+
+    <script>
+        $(function () {
+            $("#save").click(function () {
+                /* check if the input is Empty*/
+                if ($("#courseImage").val() == "") {
+                    $("#error-div").fadeIn();
+                    $("#view-err").append("Please Choose The Course Photo");
+                    return false;
+                }
+                else if ($("#coachImage").val() == "") {
+
+                    $("#error-div").fadeIn();
+                    $("#view-err").append("Please Choose The Coach Photo");
+                    return false;
+                }
+
+            });
+        }
+        );
+
+    </script>
+}
+<script>
+    CKEDITOR.replace("CourseContent");
+</script>

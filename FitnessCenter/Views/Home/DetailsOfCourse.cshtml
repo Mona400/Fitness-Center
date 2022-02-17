@@ -1,0 +1,49 @@
+﻿@model FitnessCenter.Models.ApplyForCourse
+
+@{
+    ViewBag.Title = "DetailsOfCourse";
+}
+
+
+<h2>DetailsOfCourse</h2>
+
+<div>
+    <h4>ApplyForCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.courseTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.courseTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplyDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "GetCourseByUser")
+</p>

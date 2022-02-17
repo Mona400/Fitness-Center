@@ -1,0 +1,193 @@
+﻿
+<link rel="stylesheet" href="~/css/calories.css">
+<!-- start calories -->
+<section class="calories">
+    <div class="container">
+        <div class="info">
+            <h2> حساب السعرات الحرارية</h2>
+            <p style="line-height: 1.8;">
+                حاسبة السعرات الحرارية (BMR) هي عملية حسابية تقوم على حساب عدد السعرات الحرارية
+                المستهلكة يوميا للشخص (ذكر /أنثى) بناء على عدة عوامل مثل الطول, الوزن, العمر, النوع, ونوعية النشاط اليومي
+                البدني.
+                وبعد معرفة احتياج الجسم من السعرات الحرارية يمكن التحكم فى زيادة وثبات ونقصان الوزن ففى حالة الرغبة فى تثبيت
+                الوزن يتم تناول السعرات الحرارية كاملة.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="personal col-md-6">
+                <div class="imgs">
+                    <div>
+                        <label for="male"><img src="~/assets/image/male.png"></label>
+                        <input type="radio" id="male" name="gender"><label for="male"><span>ذكر</span></label>
+                    </div>
+                    <div>
+                        <label for="female"><img src="~/assets/image/woman_icon.png"></label>
+                        <input type="radio" id="female" name="gender"><label for="female"><span>أنثى</span></label>
+                    </div>
+                </div>
+                <div class="values">
+                    <div>
+                        <span>السن :</span> <input type="number" class="form-control" min="0" id="age"><span>عام</span>
+                    </div>
+                    <div>
+                        <span>الطول : </span><input type="number" class="form-control" min="0" id="height"><span>سم</span>
+                    </div>
+                    <div>
+                        <span>الوزن :</span><input type="number" class="form-control" min="0" id="weight"><span>كجم</span>
+                    </div>
+                    <div>
+                        <span>النشاط :</span>
+                        <select class="form-select" id="select">
+                            <option selected>اختر النشاط البدنى</option>
+                            <option value="0">مجهود ضعيف </option>
+                            <option value="1">مجهود متوسط</option>
+                            <option value="2">مجهود عالى</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="calc">
+                    <button class="btn btn-orange" id="calc">احسب</button>
+                    <p id="result"></p>
+                    <p id="result2"></p>
+                    <p id="reduce">
+                        ملحوظة فى حالة الرغبة فى خفض الوزن يتم تخفيض السعرات بمعدل 500 سعر يوميا لخسارة من 3:2 كيلو
+                        أسبوعيا.
+                    </p>
+                    <p id="reduce2">
+                        وفى حالة الرغبة فى زيادة الوزن يتم زيادة السعرات الحرارية بمعدل 500 سعر يوميا، مع ضرورة
+                        الاطلاع على السعرات الحرارية لكل أنواع الطعام التى نتناولها للتمكن من التحكم فى الكمية المتناولة من الطعام
+                        يوميا
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="img">
+                    <div class="overlay"></div>
+                    <img src="~/assets/image/calories-min.jpg" alt="" class="rounded-3">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="img">
+                        <img src="~/assets/image/tanshef.jpg" class="rounded-3">
+                    </div>
+                    <h4>نصائح للتنشيف</h4>
+                </div>
+
+                <div class="desc modal " id="staticBackdrop">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">نصائح للتنشيف </h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="p">
+                                    <h5>التنشيف </h5>
+                                    هو نظام غذائي يعمل على تخليص الجسم من الدهون مما يؤدي إلى نقص الوزن ونحت الجسم.
+                                    وهو عكس التضخيم والهدف منه حرق الدهون المكتسبة في فترة التضخيم والتخفيض من نسبة الدهون في الجسم للحصول
+                                    على عضلات بارزة وصافية.
+                                    يوجد العديد من الأنظمة الغذائية وأنواع الرجيم ولكن تعتمد على مبدأ واحد وهو حساب عدد السعرات الحرارية
+                                    وتقليلها.
+                                    ولإنشاء نظام غذائي للتنشيف وحرق الدهون عليك معرفة إحتياجك اليومي من السعرات الحرارية ولمعرفة ذلك عليك
+                                    زيارة صفحة حاسبة السعرات الحرارية وإدخال بيانات من الطول والوزن والعمر وغيرهم.
+                                </div>
+
+                                <div class="p">
+                                    <h5>نصائح لتنشيف صحيح</h5>
+                                    - كقاعدة عامة يمكنك أن تبدأ في التنشيف إذا كانت نسبة الدهون لديك أكثر من 15% ويمكنك أن توقف تنشيف إذا
+                                    وصلت نسبة الدهون الى 12%<br>
+                                    - الإبتعاد تدريجيًا وليس بشكل مفاجئ من المشروبات الغازية والوجبات السريعة والجاهزة والدهون
+                                    والسكريات.<br>
+                                    - الإكثار من شرب الماء يساعد في حرق الدهون كما يساعد في تخليص الجسم من الفضلات وطرد السوائل المخزنة في
+                                    الجسم.<br>
+                                    - من الأخطاء المنتشره في مرحلة التنشيف رفع أوزان خفيفة مع عدات أكثر، وهذا خطأ وليس له أساس من الصحة،
+                                    سواء كنت تريد التضخيم أو التنشيف فذلك لا علاقة له بالتمرين بل التغذئية من تتحكم في الأمر.<br>
+                                    - إستخدام الأغذية الغنية بالألياف مثل الشوفان والموز والأرز البني والخضروات لأنها تشعرك بالشبع وبطيئة
+                                    الإمتصاص.<br>
+                                    - إبتعد عن الزيوت المهدرجة وإستخدم زيت الزيتون أو زيت جوز الهند..<br>
+                                    - بالنسبة للكارديو 3 مرات في الأسبوع في أي وقت تريد ( القفز بالحبل أو الجري أو المشي السريع أو الدراجة
+                                    أو السلم ). <br>
+                                    - الحرص على تعريض الجسم بصفة مستمرة لآشعة الشمس، وذلك للإستفادة من فيتامين "د" الذي يتكون عند تعريض
+                                    الجسم لآشعة الشمس.,<br>
+                                    <h6>.......... - الصبر ثم الصبر وستأتي النتائج بكل تأكيد، فقط إستمر...........</h6>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                                        style="display: block; margin-left: auto;">
+                                    اغلاق
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-5 mx-auto">
+                <div data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    <div class="img">
+                        <img src="~/assets/image/tadhem.jpg" class="rounded-3">
+                    </div>
+                    <h4>نصائح للتضخيم</h4>
+                </div>
+
+                <div class="desc modal " id="staticBackdrop2">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">نصائح للتضخيم </h5>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <h5>التضخيم</h5>
+                                    هو الدخول فى مرحلة لزيادة حجم العضلات وزيادة الوزن مع المحاولة على عدم اكتساب كمية دهون كبيرة، وهذا عن
+                                    طريق الرفع من عدد السعرات الحرارية اليومية، ولكن الخطأ الذى يقع فيه العديد من المتدربين هو مباشرة عند
+                                    سماع كلمة تضخيم يظنون ان ذلك يعنى تناول اكبر كميه طعام فى اليوم والتوقف عن تمارين الكارديو. وهذا خطأ
+                                    بحيث ان الهدف وراء عملية التضخيم ليس زيادة الوزن بل الهدف هو زيادة كتلة عضلية نقية دون اكتساب كمية
+                                    دهون كبيرة.
+                                </div>
+
+                                <div>
+                                    <h5>نصائح لتضخيم صحيح</h5>
+                                    * الإبتعاد تدريجيا وليس بشكل مفاجئ عن المشروبات الغازية والوجبات السريعة والجاهزة والدهون
+                                    والسكريات.<br>
+                                    * الإكثار من شرب الماءيساعد فى حرق الدهون كما يساعد فى تخليص الجسم من الفضلات وطرد السوائل المخزنة فى
+                                    الجسم.<br>
+                                    * استخدام الاطعمة الغنية بالالياف مثل:- الشوفان، الموز،الارز البنى وايضا الخضروات لأنها تشعرك بالشبع
+                                    وبطيئة الامتصاص.<br>
+                                    * ابتعد عن الزيوت المهدرجة واستخدم زيت الزيتون او زيت جوز الهند<br>
+                                    * بالنسبه للكارديو 3 مرات ف الأسبوع اي وقت أردت (القفز بالحبل او الجرى اوالمشى السريع تو الدراجة او
+                                    السلم.....)<br>
+                                    * الحرص على تعريض الجسم بصفة مستمرة لأشعة الشمس، وذلك للاستفادة من فيتامين د الذى يتكون عند تعريض
+                                    الجلد لأشعة الشمس.<br>
+                                    * الصبر ثم الصبر وستأتى النتائج بكل تأكيد، فقط استمر وابتعد عن الممنوعات من (وجبات سريعة وحلويات
+                                    ومشروبات غازية....)
+                                    <br>
+                                    <h6>.......... فنظم وقتك وقسم وجباتك وستصل.........</h6>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                                        style="display: block; margin-left: auto;">
+                                    اغلاق
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p style="text-align: left">
+            <a href="~/Home/Index" class="nav-link">العوده للصفحه الرئيسيه</a>
+        </p>
+        <br />
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>
+<script src="~/js/script.js"></script>

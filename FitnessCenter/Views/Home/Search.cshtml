@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FitnessCenter.Models.Course>
+
+
+<head>
+    <link rel="stylesheet" href="~/css/courses.css">
+</head>
+<div>
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+        <input type="text" name="searchName" id="searchName"
+               placeholder="ابحث هنا.....!" />
+    }
+
+
+</div>
+<section class="courses">
+    <div class="container">
+        <h1 class="panel-heading" style="text-align:right">نتائج البحث....!</h1>
+
+        <div class="row">
+
+            @foreach (var Item in Model)
+            {
+
+                <div class="col-md-3">
+                    <div class="img">
+                        <img src="~/Uploads/@Item.courseImage" />
+                    </div>
+                    <div class="info">
+                        <h5>@Html.DisplayFor(modelItem => Item.courseTitle)</h5>
+                        @*<p>كورس اليوغا مفيد للجسم والعظم وليونة الجسم وتسهيل الحركة ومنع ضغط الشغل</p>*@
+                        @*<button class="btn btn-border-orange windowtoggel" href="~/Courses/Details">عرض التفاصيل</button>*@
+                        @*<a href="~/Home/Details" class="btn btn-border-orange">عرض التفاصيل</a>*@
+                        <a> @Html.ActionLink("عرض التفاصيل", "Details", new { CourseId = Item.Id }, new { @class = "btn btn-border-orange" })</a>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+
+        <p style="text-align: left">
+            @Html.ActionLink("العوده لصفحه الكورسات", "Course","Home" , new { @class = "padding-top: 10px; display: block;" })
+        </p>
+        <br />
+    </div>
+
+    <script src="~/js/lib/bootstrap.bundle.min.js"></script>

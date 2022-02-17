@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FitnessCenter.Models.ApplyForCourse>
+
+<link rel="stylesheet" href="~/css/courses.css">
+
+<section class="courses">
+    <div class="container">
+        <h3><mark>الكورسات التي قمت بالاشتراك فيها..</mark></h3>
+        <table class="table" style="text-align:left">
+            <tr>
+                <th></th>
+
+                <th>
+                    الرساله
+                </th>
+                <th>
+                    تاريج التقديم
+                </th>
+                <th>
+                    اسم الكورس
+                </th>
+
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td style="text-align:right">
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Details", "DetailsOfCourse", new { id = item.Id },  new { @class = "btn btn-info" }) |*@
+                        @Html.ActionLink("الغاء الحجز", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplyDate)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Job.courseTitle)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>
+<p style="text-align: left">
+    @Html.ActionLink("العوده لصفحه الرئيسيه", "Index", "Home", new { @class = "padding-top: 10px; display: block;" })
+</p>
+<br />
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

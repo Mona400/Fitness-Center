@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FitnessCenter.Models.CoursesViewModel>
+@using Microsoft.AspNet.Identity
+@using FitnessCenter.Models;
+<link rel="stylesheet" href="~/css/courses.css">
+
+<section class="courses">
+    <div class="container">
+        @if (Request.IsAuthenticated)
+        {
+            var db = new ApplicationDbContext();
+            var UserID = User.Identity.GetUserId();
+
+            var CurrentUser = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+
+            <h3>لوحه التحكم الخاصه بالكابتن <b> @CurrentUser.UserName</b></h3>
+        }
+
+            @foreach (var gr in Model)
+            {
+                <h3><mark> @gr.CourseTitle</mark></h3>
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>
+                            اسم المشترك
+                        </th>
+                        <th>
+                            الرساله
+                        </th>
+                        <th>
+                            تاريخ الاشتراك
+                        </th>
+                        <th>
+                            ايميل المشترك
+                        </th>
+                    </tr>
+                    @foreach (var item in gr.Items)
+                    {
+                        <tr>
+                            <td>
+                                @item.User.UserName
+                            </td>
+                            <td>
+                                @item.Message
+                            </td>
+                            <td>
+                                @item.ApplyDate
+                            </td>
+                            <td>
+                                @item.User.Email
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            }
+        
+    </div>
+    <p style="text-align: left">
+        @Html.ActionLink("العوده لصفحه الرئيسيه", "Index", "Home", new { @class = "padding-top: 10px; display: block;" })
+    </p>
+    <br />
+</section>
+    
+
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

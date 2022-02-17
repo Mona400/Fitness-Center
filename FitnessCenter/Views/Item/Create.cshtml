@@ -1,0 +1,128 @@
+﻿@model FitnessCenter.ViewModel.ItemViewModel
+<head>
+
+    <link rel="stylesheet" href="~/css/products.css" />
+</head>
+<section class="products">
+    <div class="container">
+        @using (Html.BeginForm("Create", "Item", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="alert alert-danger" id="error-div" style="display:none">
+                    <span id="view-err">
+
+                    </span>
+                </div>
+                <h3 class="panel-heading">انشاء منتج جديد....!</h3>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("كود المنتج", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ItemCode, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ItemCode, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("اسم المنتج", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ItemName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("الوصف", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("السعر", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ItemPrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ItemPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("صوره المنتج", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="uploadImage" class="form-control" id="productImage" />
+                        @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="حفظ" class="btn btn-orange" id="save" />
+                </div>
+            </div>
+        }
+        <p style="text-align: left">
+
+            <a href="~/Item/Index" class="nav-link">العوده للصفحه التحكم</a>
+        </p>
+        <br />
+    </div>
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>
+@section scripts{
+
+    <script>
+        $(function () {
+            $("#save").click(function () {
+                /* check if the input is Empty*/
+                if ($("#productImage").val() == "") {
+                    $("#error-div").fadeIn();
+                    $("#view-err").append("!......الرجاء ادخال صوره المنتج");
+                    return false;
+                }
+
+                //check if the image extension is valid
+                if ($("#ImageCourse").val() !== "" | $("#ImageCoach").val() !== "") {
+                    var filename1 = document.getElementById("ImageCourse").value;
+                    var filename2 = document.getElementById("ImageCoach").value;
+                    var extensionImg1 = filename1.substr(filename.lastIndexOf('.') + 1);
+                    var extensionImg2 = filename2.substr(filename.lastIndexOf('.') + 1);
+                    var validExtensions = ['jpg', 'png', 'gif', 'pmb'];
+                    if ($.isArray(extensionImg1, validExtensions == -1)) {
+                        $("#error-div").fadeIn();
+                        $("#view-err").append("Image extension is not valid");
+                        return false;
+
+                    }
+                    else if ($.isArray(extensionImg2, validExtensions == -1)) {
+                        $("#error-div").fadeIn();
+                        $("#view-err").append("Image extension is not valid");
+                        return false;
+
+                    }
+
+
+
+                    //check the image size is valid (2mb)
+                    var myFileSize1 = document.getElementById("ImageCourse").files[0].size / 1024 / 1024;
+                    if (myFileSize1 > 2) {
+                        $("#error-div").fadeIn();
+                        $("#view-err").append("Image size is not  valid must be (2mb)");
+                        return false;
+
+
+                    }
+                    var myFileSize2 = document.getElementById("ImageCoach").files[0].size / 1024 / 1024;
+                    if (myFileSize2 > 2) {
+                        $("#error-div").fadeIn();
+                        $("#view-err").append("Image size is not  valid must be (2mb)");
+                        return false;
+
+                    }
+                }
+
+
+            });
+        }
+        );
+
+    </script>
+}

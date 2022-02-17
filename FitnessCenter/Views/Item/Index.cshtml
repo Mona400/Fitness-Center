@@ -1,0 +1,60 @@
+﻿@model IEnumerable<FitnessCenter.ViewModel.ItemViewModel>
+<head>
+    <link rel="stylesheet" href="~/css/products.css" />
+</head>
+<section class="products">
+    <div class="container">
+        <p>
+            @Html.ActionLink("انشاء منتج جديد", "Create", null, new { @class = "btn btn-border-orange" })
+        </p>
+        <table class="table table-bordered" style="text-align:center">
+            <tr style=" color: #f58840;">
+                <th>التحكم</th>
+                <th>
+                    <p>صوره المنتج</p>
+                </th>
+                <th>
+                    <p>السعر</p>
+                </th>
+                <th>
+                    <p>كود المنتج</p>
+                </th>
+                <th>
+                    <p>الوصف</p>
+                </th>
+                <th>
+                    <p>اسم المنتج</p>
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("تعديل", "Edit", new { id = item.ItemId }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("حذف", "Delete", new { id = item.ItemId }, new { @class = "btn btn-danger windowtoggel" })
+                    </td>
+                    <td>
+                        <img src="~/Uploads/@Html.DisplayFor(model=>item.ImagePath)" class="thumbnail" style="width:48px;height:48px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <p style="text-align: left">
+        <a href="~/Shopping/Index" class="nav-link">العود لصفحه المنتجات</a>
+    </p>
+    <br />
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

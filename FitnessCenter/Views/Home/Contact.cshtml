@@ -1,0 +1,101 @@
+﻿@model FitnessCenter.Models.ContactModel
+
+
+<!-- start contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h1 class="h1" style="margin-top: 140px;">تواصل معنا</h1>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("الاسم", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("الايميل", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("العنوان", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("الرساله", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="ارسال" class="btn btn-border-orange" />
+                </div>
+            </div>
+        }
+    </div>
+    <p style="text-align: left">
+        <a href="~/Home/Index" class="nav-link">العوده للصفحه الرئيسيه</a>
+
+    </p>
+    <br />
+</section>
+
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+<!-- start contact -->
+<!--<section class="contact" id="contact">
+    <div class="container">
+        <h1 class="h1" style="margin-top: 140px;">تواصل معنا</h1>
+        <form>
+            <div class="mb-3 ">
+                <label>الاسم :</label>-->
+                <!-- <div class="col-sm-10"> -->
+                <!--<input type="text" class="form-control">-->
+                <!-- </div> -->
+            <!--</div>
+            <div class="mb-3 ">
+                <label>الايميل :</label>-->
+                <!-- <div class="col-sm-10"> -->
+                <!--<input type="email" class="form-control">-->
+                <!-- </div> -->
+            <!--</div>
+            <div class="mb-3">
+                <label> رسالتك : </label>
+                <textarea class="form-control" rows="5" cols="9"></textarea>
+            </div>
+
+            <button class="btn btn-border-orange">ارسال</button>
+        </form>
+    </div>
+</section>
+<div class="footer">
+    جميع الحقوق محفوظة ل Fat 2 Fit team
+</div>
+<script src="js/lib/bootstrap.bundle.min.js"></script>-->

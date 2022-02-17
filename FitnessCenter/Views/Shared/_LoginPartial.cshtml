@@ -1,0 +1,115 @@
+﻿@using Microsoft.AspNet.Identity
+@using FitnessCenter.Models;
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"/*, @class = "navbar-right" */}))
+    {
+        var db = new ApplicationDbContext();
+        var UserID = User.Identity.GetUserId();
+
+        var CurrentUser = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown">
+
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <strong>مرحبا:@CurrentUser.UserName</strong>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="navbar-user">
+                            <div class="row">
+                                <div class="row-cols-lg-4">
+                                    <p class="text-center">
+                                        <span class="glyphicon glyphicon-user img-size"></span>
+                                    </p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <p class="text-right">
+                                        <strong>
+                                            @CurrentUser.UserType
+                                        </strong>
+                                    </p>
+                                    @*@if (CurrentUser.UserType == "Coach")*@
+                                    @if (CurrentUser.UserType == "كوتش")
+                                    {
+
+                                        <a href="~/Home/GetCoursesByCoach" class="btn btn-success"><b>الكورسات التي نشرتها</b>  </a>
+
+                                        <a href="~/Courses/Create" class="btn btn-success"><b>نشر كورس جديد</b>  </a>
+
+                                        <a href="~/Courses" class="btn btn-success"><b>اداره الكورسات</b>  </a>
+
+
+                                    }
+                                    @if (CurrentUser.UserType == "أدمن")
+                                    {
+                                        <a href="~/Item/Index" class="btn btn-success"><b>اداره المنتجات</b>  </a>
+                                    }
+                                    else
+                                    {
+                                        @*<a href="~/Home/GetCoursesByCoach" class="btn btn-success">Courses You Are Publisher  </a>
+                                            <a href="~/Courses/Create" class="btn btn-success">Publish New Course  </a>*@
+
+                                        <a href="~/Home/GetCourseByUser" class="btn btn-success btn-block">Courses You Are Apply</a>
+
+                                    }
+
+                                    <a href="~/Account/EditProfile" class="btn btn-primary btn-block"> Edit Profile</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="divider"> </li>
+                    <li>
+                        <div class="col-lg-12">
+                            <p>
+                                <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger btn-block">Log off</a>
+                            </p>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+
+            </li>
+
+            @*<li>
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>*@
+        </ul>
+    }
+}
+else
+{
+
+
+
+    <form class="d-flex">
+        <a>
+            @Html.ActionLink("دخول", "Login", "Account", routeValues: null, htmlAttributes: new
+     {
+         id = "loginLink",
+         @class = "btn btn-border-orange"@*, target = "blank"*@})
+        </a>
+
+        <a>
+            @Html.ActionLink("تسجيل", "Register", "Account", routeValues: null, htmlAttributes: new
+     {
+         id = "registerLink",
+         @class = "btn btn-orange"@*, target = "blank"*@})
+        </a>
+
+    </form>
+
+    <script src="~/js/lib/bootstrap.bundle.min.js"></script>
+
+   
+
+}

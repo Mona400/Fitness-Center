@@ -1,0 +1,128 @@
+﻿@model IEnumerable<FitnessCenter.ViewModel.ItemViewModel>
+
+
+<script type="text/javascript">
+    function AddToCart(item) {
+        var itemId = $(item).attr("itemid");
+        var formData = new FormData();
+        formData.append("ItemId", itemId);
+        $.ajax({
+            async: true,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: formData,
+            url: '/Item/Product',
+            success: function (data) {
+                if (data.Success) {
+                    $("#cartItem").text("Cart(" + data.Counter + ")");
+                }
+            },
+            error: function () {
+                alert("There Is Some Problem");
+            }
+
+        });
+
+    }
+
+</script>
+
+
+<div class="container">
+    <h2 class="text-center">product list</h2>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4" style="border:2px solid orange">
+            <div style="text-align:center;border-bottom:2px solid maroon">
+                <h3>@item.ItemName</h3>
+            </div>
+            <div>
+                <div class="col-md-8">
+                    @*<img src="@Url.Content(item.ImagePath)" width="150px" height="150px" />*@
+                    <img src="~/Uploads/@item.ImagePath" width="150px" height="150px" />
+                </div>
+                <div class="col-md-4" style="text-align:left">
+                    <b>@item.Description</b>
+                </div>
+            </div>
+            <div class="col-md-8" style="font-size:18px;border-top:2px solid maroon;padding:2px">
+                <b>@item.ItemPrice.ToString(format:"#,##0.00 LE")</b>
+            </div>
+            <div class="col-md-4" style="text-align:right;margin-bottom:10px;border-top:2px solid maroon;padding:2px">
+                <input type="button" name="AddToCart" value="Add to Cart" class="btn btn-warning" itemid="@item.ItemId" id="btnAddToCart"  onclick="AddToCart(this)"/>
+
+            </div>
+        </div>
+
+    }
+
+</div>
+
+@Styles.Render("~/Content/css")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--{
+    ViewBag.Title = "Course";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+
+<h2>Course</h2>
+<br />
+<li>
+    using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+        <input type="text" name="searchName" id="searchName"
+               placeholder="Search..." />
+    }
+
+
+</li>
+
+<br />-->
+@*<div class="panel panel-info">*@
+
+
+
+@*<div class="row panel-body">*@
+
+
+<!--foreach (var Item in Model)
+{
+
+    <div class="col-md-2 thumbnail" style="margin-left:20px;margin-bottom:30px; min-height:350px; border:solid solid solid none">
+        <img src="~/Uploads/Item.courseImage" />
+        <h3>Html.DisplayFor(modelItem => Item.courseTitle)</h3>
+        <h5>Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => Item.courseContent).ToString()))</h5>
+
+        Html.ActionLink("عرض التفاصيل", "Details", new { CourseId = Item.Id }, new { class = "btn btn-warning" })
+    </div>
+
+}
+
+Styles.Render("~/Content/css")-->
+@*</div>*@
+@*</div>*@

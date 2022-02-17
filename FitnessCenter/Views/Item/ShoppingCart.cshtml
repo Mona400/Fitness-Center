@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FitnessCenter.ViewModel.OrderDetailsModel>
+@{
+    ViewBag.Title = "ShoppingCart";
+    decimal TotalAmount = 0.00M;
+}
+
+<h2>ShoppingCart</h2>
+@using (Html.BeginForm("AddOrder", "Item", FormMethod.Post))
+{
+
+    <table class="table-condensed" style="width:100%">
+        @foreach (var item in Model)
+        {
+            TotalAmount += item.Total;
+            <tr>
+                <td>
+                    @*<img src="@Url.Content(item.ImagePath)" height="50px" width="50px" class="img-rounded" />*@
+                    <img src="~/Uploads/@item.ImagePath" width="50px" height="50px" />
+                </td>
+                <td>
+                    @item.ItemName
+                </td>
+                <td style="text-align:right">
+                    @item.Quantity.ToString(format: "#,##0")
+                </td>
+                <td style="text-align:right">
+                    @item.UnitPrice.ToString(format: "#,##0.00")
+                </td>
+                <td style="text-align:right">
+                    @item.Total.ToString(format: "#,##0.00")
+                </td>
+                <td style="text-align:right">
+                    @*@Html.ActionLink("تعديل", "Edit", new { id = item.ItemId }, new { @class = "btn btn-primary" }) |*@
+
+                    @Html.ActionLink("حذف", "DeleteFromCart", new { id = item.OrderId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+        <tr style="border-top:2px solid maroon">
+            <td colspan="4" style="text-align:right">
+                <h3>Total Amount</h3>
+            </td>
+            <td style="text-align:right">
+                <h3>@TotalAmount.ToString(format: "#,##0.00")</h3>
+            </td>
+
+        </tr>
+        <tr style="text-align:right">
+            <td colspan="5">
+                <input type="submit" value="Save" name="save" class="btn btn-warning"  />
+            </td>
+        </tr>
+
+
+    </table>
+
+
+}

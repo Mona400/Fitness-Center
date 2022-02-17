@@ -1,0 +1,38 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+<head>
+    <link rel="stylesheet" href="~/css/products.css" />
+
+</head>
+<section class="products">
+    <div class="container">
+        <div>
+            <h4>حذف...!</h4>
+            <dl class="dl-horizontal">
+                <dt>
+                   الاسم
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger" /> 
+                  
+                </div>
+            }
+        </div>
+    </div>
+    <p style="text-align: left">
+        <a href="~/Roles/Index" class="nav-link">العوده </a>
+    </p>
+    <br />
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

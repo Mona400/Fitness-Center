@@ -1,0 +1,107 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  direction: rtl !important;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.products {
+  margin-top: 130px;
+}
+
+.products .container .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.products .container .top h3 {
+  font-weight: bold;
+}
+
+.products .container .top form select {
+  width: 400px;
+}
+
+.products .container .row {
+  margin-top: 50px;
+}
+
+.products .container .row .col-md-3 {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.products .container .row .col-md-3 .img {
+  width: 60%;
+  margin-left: auto;
+}
+
+.products .container .row .col-md-3 .img img {
+  width: 100%;
+  height: 140px;
+}
+
+.products .container .row .col-md-3 .info h5 {
+  margin: 10px 0px;
+}
+
+.products .container .row .col-md-3 .info p {
+  line-height: 1.8;
+}
+
+.products .container .row .col-md-3 .info button {
+  display: block;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  .products {
+    margin-top: 100px;
+  }
+  .products .container .top {
+    display: block !important;
+    text-align: center;
+  }
+  .products .container .top select {
+    width: 300px !important;
+    margin: 20px auto !important;
+  }
+  .products .container .row {
+    margin-top: 50px;
+  }
+  .products .container .row .col-md-3 {
+    width: 40% !important;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .products .container .row .col-md-3 .img {
+    width: 60%;
+    margin-left: auto;
+  }
+  .products .container .row .col-md-3 .img img {
+    width: 100%;
+    height: 140px;
+  }
+  .products .container .row .col-md-3 .info h5 {
+    margin: 10px 0px;
+    font-size: 14px;
+  }
+  .products .container .row .col-md-3 .info p {
+    line-height: 1.5;
+    font-size: 12px;
+  }
+  .products .container .row .col-md-3 .info button {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+}
+/*# sourceMappingURL=products.css.map */

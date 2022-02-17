@@ -1,0 +1,206 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  direction: rtl !important;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+@-webkit-keyframes up {
+  0% {
+    border: 2px solid #f58840;
+  }
+  50% {
+    border: 2px solid transparent;
+  }
+  100% {
+    border: 2px solid #f58840;
+  }
+}
+
+@keyframes up {
+  0% {
+    border: 2px solid #f58840;
+  }
+  50% {
+    border: 2px solid transparent;
+  }
+  100% {
+    border: 2px solid #f58840;
+  }
+}
+
+.calories .container .info h2 {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.calories .container .info p {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.calories .container .row {
+  margin-top: 80px;
+}
+
+.calories .container .row .personal .imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+}
+
+.calories .container .row .personal .imgs > div {
+  width: 100px;
+}
+
+.calories .container .row .personal .imgs > div label {
+  cursor: pointer;
+}
+
+.calories .container .row .personal .imgs > div input {
+  margin-left: 10px;
+}
+
+.calories .container .row .personal .imgs > div img {
+  width: 100%;
+}
+
+.calories .container .row .personal .imgs > div span {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.calories .container .row .personal .values {
+  margin-top: 50px;
+}
+
+.calories .container .row .personal .values > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 30px 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.calories .container .row .personal .values > div .form-control {
+  width: 50% !important;
+}
+
+.calories .container .row .personal .values > div .form-select {
+  width: 50% !important;
+}
+
+.calories .container .row .personal .values > div span {
+  margin: 0px 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.calories .container .row .personal .calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calories .container .row .personal .calc button {
+  margin-right: 20px;
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.calories .container .row .personal .calc p {
+  font-weight: bold;
+  font-style: italic;
+  -webkit-animation: up 2s infinite;
+          animation: up 2s infinite;
+  display: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.calories .container .row .col-md-6 .img {
+  position: relative;
+}
+
+.calories .container .row .col-md-6 .img .overlay {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+}
+
+.calories .container .row .col-md-6 .img img {
+  width: 100%;
+}
+
+.calories .container .row .col-md-5 {
+  text-align: center;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.calories .container .row .col-md-5 .img {
+  width: 80%;
+  margin: auto;
+}
+
+.calories .container .row .col-md-5 .img img {
+  width: 100%;
+  height: 280px;
+  -webkit-box-shadow: 0px 0px 10px #f58840;
+          box-shadow: 0px 0px 10px #f58840;
+}
+
+.calories .container .row .col-md-5 h4 {
+  color: #f58840;
+  margin-top: 20px;
+  text-shadow: 0px 0px 1px #000;
+}
+
+.calories .container .row .col-md-5 .desc {
+  text-align: right !important;
+}
+
+.calories .container .row .col-md-5 .desc .modal-body {
+  text-align: right !important;
+}
+
+.calories .container .row .col-md-5 .desc .modal-body h5 {
+  color: #f58840;
+}
+
+.calories .container .row .col-md-5 .desc .modal-body h6 {
+  color: #f58840;
+  font-size: 14px !important;
+  margin-top: 20px;
+}
+
+.calories .container .row .col-md-5 .desc .modal-body div {
+  line-height: 2;
+  font-size: 15px !important;
+}
+/*# sourceMappingURL=calories.css.map */

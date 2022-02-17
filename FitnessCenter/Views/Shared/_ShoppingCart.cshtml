@@ -1,0 +1,35 @@
+﻿@*@model FitnessCenter.ViewModel.OrderDetailsModel*@
+<ul class="nav navbar-nav navbar-right">
+    @if (Session["CartCounter"] == null)
+    {
+        <li>@Html.ActionLink("Cart", "ShoppingCart", "Shopping", htmlAttributes: new { id = "cartItem" })</li>
+
+        @*<li>@Html.ActionLink("Index", "Shopping", null, htmlAttributes: new { id = "cartItem" })</li>*@
+
+    }
+    else
+    {
+
+
+        @*<li> @Html.ActionLink("(" + Session["CartCounter"] + ")", "ShoppingCart", "Shopping", htmlAttributes: new { id = "cartItem" }) </li>*@
+
+
+
+        <li> @Html.ActionLink("" + Session["CartCounter"] + "", "ShoppingCart", "Shopping", htmlAttributes: new { id = "cartItem" }) </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+</ul>

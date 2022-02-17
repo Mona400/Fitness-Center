@@ -1,0 +1,126 @@
+﻿
+    <link rel="stylesheet" href="~/css/lib/bootstrap.min.css" / >
+    <link rel="stylesheet" href="~/css/style.css" / >
+   
+        <!-- Start Slider -->
+        <section class="slider">
+            <div id="carouselExampleFade"
+                 class="carousel slide carousel-fade"
+                 data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="overview"></div>
+                        <img src="~/assets/image/1-min.jpg" class="d-block w-100" alt="..." />
+                        @*<img src="~/assets/image/1-min.jpg" class="d-block d-flex align-items-center"  alt="..." />*@
+                    </div>
+                    <div class="carousel-item">
+                        <div class="overview"></div>
+                        <img src="~/assets/image/2-min.jpg" class="d-block w-100" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <div class="overview"></div>
+                        <img src="~/assets/image/3-min.jpg" class="d-block w-100" alt="..." />
+                    </div>
+                </div>
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- start Serveics -->
+        <section class="services" id="services">
+            <div class="container">
+                <h1>خدمتنا</h1>
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <a href="~/Pages/calories" target="_blank">
+                            <div class="img">
+                                <img src="~/assets/icons/calries.png" alt="" />
+                            </div>
+                            <h4>حساب السعرات الحرارية</h4>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="~/Pages/statics" target="_blank">
+                            <div class="img">
+                                <img src="~/assets/icons/fitness_stats_sht6.svg" alt="" />
+                            </div>
+                            <h4>دليل التغذية</h4>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="~/Pages/mokamelat" target="_blank">
+                            <div class="img">
+                                <img src="~/assets/icons/muscles.png" class="resize" />
+                            </div>
+                            <h4>دليل المكملات</h4>
+                        </a>
+                    </div>
+
+                    <!-- <div class=" col-md-4">
+                  <a href="newserve.html">
+                    <div class="img">
+                      <img src="assets/icons/1.gif" alt="">
+                    </div>
+                    <h4>الخدمة الجديدة</h4>
+                  </a>
+                </div> -->
+
+                    <div class="col-md-4">
+                        <a href="~/Home/Course">
+                            <div class="img">
+                                <img src="~/assets/icons/courses.png" alt="" />
+                            </div>
+                            <h4>الكورسات</h4>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        @*<a href="question.html" target="_blank">*@
+
+                        @*<a href="~/Home/question" target="_blank">*@
+                        <a href="~/Pages/question" target="_blank">
+
+                            @*<a href="~/Pages/question.html">~/Pages/question.html</a>*@
+                            <div class="img">
+                                <img src="~/assets/icons/questions.svg" alt="" />
+                            </div>
+                            <h4>الأسئلة الشائعة</h4>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="~/Shopping/Index">
+                            @*<a href="question.html" target="_blank">*@
+                            <div class="img">
+                                <img src="~/assets/icons/questions.svg" alt="" />
+                            </div>
+                            <h4>منتجاتنا</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- start products -->
+        <!-- start contact -->
+
+
+
+
+        <script src="~/js/lib/bootstrap.bundle.min.js"></script>
+        @*@Styles.Render("~/Content/css")*@

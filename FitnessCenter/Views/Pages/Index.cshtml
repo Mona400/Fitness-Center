@@ -1,0 +1,702 @@
+﻿
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fat 2 Fit</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="~/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="shortcut icon" href="~/assets/logo.svg" type="image/x-icon">
+    <style>
+        .btn,
+        .card {
+            font-weight: bold;
+        }
+
+        .modal-body {
+            line-height: 1.8;
+            font-weight: bold;
+        }
+
+        .row > div {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body dir="rtl">
+    <!-- Start Navbar -->
+    <section class="navbarr p-0">
+        <nav class="navbar navbar-expand-lg fixed-top bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.svg">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list"
+                             viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">خدمتنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">منتجاتنا </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"> تواصل معنا </a>
+                        </li>
+                        <a href="cart.html">
+                            <span class="icon">
+                                <span class="number">3</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                     class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
+                                </svg>
+                            </span>
+                        </a>
+                    </ul>
+
+
+                    <form class="d-flex">
+                        <a target="blank" href="login.html" class="btn btn-border-orange">دخول</a>
+                        <a target="blank" href="signup.html" class="btn btn-orange">تسجيل</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- question -->
+    <section class="question">
+        <div class="container">
+            <h2 style="margin-top: 129px;text-align: center;">الأسئلة الشائعة</h2>
+
+            <div class="row mt-5">
+
+                <div class="col-md-3 mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        ماذا تعنى السعرات الحرارية؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    هي وحدة قياس كمية الطاقة في الطعام، والتي من خلالها يتمكن جسم الإنسان من الحركة والقيام بمختلف الأنشطة
+                                    في
+                                    حياته اليومية؛ مثل: التفكير، والمشي. طبعاً يعبر عن السعرات الحرارية أحيانا بـالكيلو كالوري أو
+                                    الكيلوجول
+                                    وكلاهما وحدتان لقياس الطاقة
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block" data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#ex">
+                        ما هي أفضل مصادر البوتاسيوم؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ex" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    البطاطس - الفاصوليا - اللوز - سمك السردين - الخضر.
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#exq">
+                        كم مدة الراحة المثالية بين التمرين؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exq" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ◼️ 90 الى 120 ثانية فى التمارين الكبيرة
+                                    <br>
+                                    ◼️ 60 إلى 90 ثانية فى تمارين العزل
+                                    <br>
+                                    ◼️ 30 إلى 60 ثانية للتمارين بالاوزان الخفيفة
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#exqw">
+                        اتمرن منذ مدة ولكن لا يوجد نتائج؟!
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exqw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    السبب هو التغذية فالتغذية تمثل 70% من معادلة نمو العضلات، فراجع نظامك الغذائى
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#r">
+                        ما هو الروتين التدريبى؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="r" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    هو أن تعتاد العضلات على أداء تمارين معينه بتكنيك ثابت لفترة زمنيه طويلة وهذا يولد حاله تسمى "الخمول
+                                    العضلى" فيشعر المتدرب بعد أدائه التدريب كأنه لم يلعب بتاتا فلا يشعر بالاستفادة من تدريبه ويتوقف نمو
+                                    عضلاته. - فى هذه الحاله يجب تغيير النظام التدريبى بالكامل
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#t">
+                        ما هو الواى بروتين ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="t" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    هو بروتين مستخلص من الحليب 1 لتر من الحليب يحتوى على 30 جرام من البروتين وهو الاساس ف بناء العضلات
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#j">
+                        ما هو السن المناسب للبدء ف ممارسة كمال الأجسام؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="j" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    من الممكن ممارسة هذة الرياضة فى اي سن لكن الأنسب هو سن 18 سنه
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#h">
+                        ماذا يحدث إذا إخذت أقل من احتياجي من البروتين ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="h" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    في حالة أخذ كمية بروتين أقل من احتياجك فإن حجم عضلاتك سيبقي صغيرا أو عضلاتك ستنمو بوتيرة بطيئة جدا.
+                                    في حالة أخذ كمية من بروتين أكثر من احتياجك وخصوصا من المكملات الغذائية فمن المحتمل أن يسبب لك اضرار علي
+                                    مستوي الكبد
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#g">
+                        ما الفرق بين البروتين النباتي والبروتين الحيواني ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="g" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ينقسم البروتين إلي نوعين الروتين النباتي والبروتين الحيواني :
+                                    البروتينات الموجودة في المنتجات الحيوانية بروتينات كاملة ، أي أنها تحتوي علي جميع الأحماض الأمينية وعددها
+                                    ثمانية ، والتي لا يستطيع الجسم صنعها بنفسه وتعتبر ضرورية لبناء 22 حمض أميني.
+                                    أما البروتينات النباتية فهي بروتينات غير كاملة ، أي يجب أن تضاف إليها بروتينات أخري كي يحصل الجسم علي جميع
+                                    الأحماض الأمينية اللازمه له
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#f">
+                        أتمرن منذ مدة طويلة لكن عضلاتي لا تنمو ما السبب ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="f" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    أسباب عدم نمو العضلات كثيرة منها :
+                                    - عدم حصولك علي ما يكفي من السعرات الحرارية .<br>
+                                    - انت تأكل الأطعمة الخاطئة .<br>
+                                    - انت لا تتناول وجبات كافية .<br>
+                                    - انت لا تشرب الكمية الكافية من الماء .<br>
+                                    - نظام تمرينك خاطئ .<br>
+                                    - لقد استخدمت نظام تدريب لمدة طويلة .<br>
+                                    - انت لما تكن تركز علي الزيادة في الاوزان .<br>
+                                    - انت تمارس التمارين الخاطئة .<br>
+                                    - عدم تمرينك للرجل .<br>
+                                    - عدم حصولك علي الوقت الكافي للراحة .<br>
+                                    - عدم حصولك علي قسط كافي من النوم
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#d">
+                        ما هي المكملات الغذائية التي يمكن إستعمالها بالنسبة للمبتدئين؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="d" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    - مكملات الجينر : إن كان يعاني من النحافة ويريد زيادة الوزن.<br>
+                                    - مكملات الواي بروتين : إذا كان يريد توفير كميات البروتين التي يحتاجها جسمه لإكتساب عضلات أكبر<br>
+                                    - مكملات الأوميجا 3 والفيتامينات والمعادن المغنيسيوم والزنك.<br>
+                                    أما باقي المكملات الغذائية ك BCAA والجلوتامين والكرياتين لا يحتاجها المبتدئ في عالم المكملات ويستحسن<br>
+                                    تجنبها حتى يتعود جسمه على المكملات الغذائية.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#s">
+                        هل الشعور بالألم في العضلة بعد نهاية الحصة التدريبية أمر طبيعي؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="s" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    الشعور بالألم في عضلة معينة بعد التمرين لمدة يوم أو يومين أمر طبيعي ومتوقع، لكن أن تستمر تلك الآلام لمدة
+                                    تزيد عن 3 أيام فهذا يدل على أن العضلة لم تأخذ الراحة الكافية لكي تحقق الإستشفاء العضلي؛ وهذا يؤثر سلبًا
+                                    على النمو العضلي، لذا عليك التوقف عن تمرين عضلة معينة لم تشفى بعد من التمرين السابق، وينصح بعدم تمرين نفس
+                                    العضلة الا بعد مرور 48 ساعة على الأقل على تمرينها السابق خصوصًا إن كان هدفك التضخيم.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#a">
+                        إنقطعت عن التدريب مدة طويلة كيف أبدأ مرة أخرى؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="a" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    إبدأ بتمارين تستهدف جميع عضلات الجسم بأوزان خفيفة مع زيادة الأوزان بشكل تدريجي لمدة أسبوعين لتجنب الإصابة.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 mx-auto  text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#m">
+                        ما هي أفضل طريقة لتناول البيض: نيئ أم مطبوخ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="m" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    من ناحية القيمة الغذائية البروتين في البيض المطبوخ أعلى من البيض النيئ؛ والسبب أن الطبخ يميت بعض الإنزيمات
+                                    التي تمنع إمتصاص البروتين. من الناحية الصحية البيض النيئ قد يحتوي على بكتيريا السالمونيلا التي تسبب تسمم
+                                    غذائي للجهاز الهضمي.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#n">
+                        ما هي أفضل طريقة لتناول البيض: نيئ أم مطبوخ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="n" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    من ناحية القيمة الغذائية البروتين في البيض المطبوخ أعلى من البيض النيئ؛ والسبب أن الطبخ يميت بعض الإنزيمات
+                                    التي تمنع إمتصاص البروتين. من الناحية الصحية البيض النيئ قد يحتوي على بكتيريا السالمونيلا التي تسبب تسمم
+                                    غذائي للجهاز الهضمي.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#b">
+                        هل تمارين الأرجل بشكل عام تفرز أو ترفع من مستوى التستسترون وتزيد من الأداء؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="b" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    أكثر الدراسات التي أجريت كانت على تمارين الأرجل، لكن بشكل عام كلما زادت نسبة العضلات زاد هرمون التستسترون.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#v">
+                        ما هي أضرار فول الصويا بالنسبة للاعب كمال الأجسام؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="v" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    هناك العديد من الدراسات التي أكدت وجود صلة بين تناول فول الصويا وبين إصابة الرجال بالعقم، وذلك يرجع إلى
+                                    إحتوائه على نسبة عالية من هرمون الاستروجين الانثوي.
+                                    وأفادت بعض الأبحاث أن الإكثار من الصويا قد ينقص معدلات الخصوبة؛ لأنه يحتوي على نوع من الاستروجين النباتي
+                                    يطلق عليه إسم استروجين الجنينإذ يؤدي تناول كميات كبيرة منه للتقليل من البويضات وبالتالي جعل عملية الحمل
+                                    غاية في الصعوبة.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#c">
+                        هل يمكن إكتساب عضل وحرق الدهون في آن واحد ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="c" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    علميًا لا يمكن لأنه إذا أردت بناء عضل يجب عليك تناول سعرات حرارية أكثر من إحتياجك اليومي وإذا أردت حرق
+                                    الدهون يجب عليك تناول سعرات حرارية أقل من إحتياجك اليومي.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#x">
+                        هل يمكن حرق الدهون بتناول أغذية صحية ؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="x" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    تناول أغذية صحية وحدها لا يكفي يجب عليك تناول سعرات حرارية أقل من إحتياجك اليومي.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3  mx-auto text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#z">
+                        كم يحتاج لاعب كمال الاجسام من البروتين يوميا؟
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="z" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    يحتاج لاعب كمال الاجسام من1,7 الى 2,2 غرام من البروتين لكل كيلو من وزنه اذا كان وزنة من 70 كيلو غرام
+                                    فيحتاج من 119 الى 154 غرام بروتين
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-border-orange d-block " data-bs-dismiss="modal"
+                                            style="margin-left: auto;">
+                                        اغلاق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p style="text-align: left">
+                <a href="~/Pages/mokamelat" class="nav-link">العوده للصفحه المكملات</a>
+            </p>
+            <br />
+    </section>
+    <script src="js/lib/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,72 @@
+﻿@model FitnessCenter.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<div class="login">
+    <div class="container">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <br />
+            <br />
+            @*<h4>انشاء حساب جديد</h4>
+            <hr />*@
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.Label("اسم المستخدم:", new { @class = "mb-3 row" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "اسم المستخدم", style = "text-align: right" })
+                </div>
+
+            </div>
+            <div class="form-group">
+                @Html.Label("النوع:", new { @class = "mb-3 row" })
+                <div class="col-md-10">
+                    @Html.DropDownList("UserType", null, new { @class = "form-control" })
+                </div>
+
+            </div>
+            <div class="form-group">
+                @Html.Label("الايميل:", new { @class = "mb-3 row" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = " ادخل الايميل", style = "text-align: right" })
+                </div>
+
+            </div>
+            <div class="form-group">
+                @Html.Label("كلمه المرور:", new { @class = "mb-3 row" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = " ادخل كلمه المرور...!", style = "text-align: right" })
+                </div>
+
+            </div>
+            <div class="form-group">
+                @Html.Label("تأكيد كلمه المرور:", new { @class = "mb-3 row" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = " تأكيد كلمه المرور...!", style = "text-align: right" })
+                </div>
+
+            </div>
+            <div class="form-group" style="text-align:left">
+                <br />
+                <div class="last">
+                    <div>
+                        <input type="submit" class="btn btn-orange" value="تسجيل" />
+                    </div>
+                    <div>
+                        <a href="~/Account/Login"> لدى ايميل؟</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+        <script src="~/js/lib/bootstrap.bundle.min.js"></script>
+        @*@section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }*@
+    </div>
+</div>

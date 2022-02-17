@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FitnessCenter.Models.Course>
+@{
+    ViewBag.Title = "Course";
+}
+<link rel="stylesheet" href="~/css/courses.css">
+<section class="overlay">
+
+    <!-- start courses -->
+    <section class="courses">
+        <div class="container">
+            <div class="row">
+                <h2> صفحة الكورسات </h2>
+                <div style="text-align:right">
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                    {
+                        <input type="text" name="searchName" id="searchName"
+                               placeholder="ابحث هنا.....!" />
+                    }
+
+
+                </div>
+            </div>
+            <div class="row">
+
+
+
+
+                @foreach (var Item in Model)
+                {
+
+
+                    <div class="col-md-3">
+                        <div class="img">
+                            <img src="~/Uploads/@Item.courseImage" />
+                        </div>
+                        <div class="info">
+                            <h5>@Html.DisplayFor(modelItem => Item.courseTitle)</h5>
+                            @*<p>كورس اليوغا مفيد للجسم والعظم وليونة الجسم وتسهيل الحركة ومنع ضغط الشغل</p>*@
+                            @*<button class="btn btn-border-orange windowtoggel" href="~/Courses/Details">عرض التفاصيل</button>*@
+                            @*<a href="~/Home/Details" class="btn btn-border-orange">عرض التفاصيل</a>*@
+                            <a> @Html.ActionLink("عرض التفاصيل", "Details", new { CourseId = Item.Id }, new { @class = "btn btn-border-orange" })</a>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+
+    <script src="~/js/lib/bootstrap.bundle.min.js"></script>
+
+    <!--<div class="col-md-2 thumbnail" style="margin-left:20px;margin-bottom:30px; min-height:350px; border:solid solid solid none">
+        <img src="~/Uploads/Item.courseImage" />
+        <h3>Html.DisplayFor(modelItem => Item.courseTitle)</h3>-->
+    @*<h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => Item.courseContent).ToString()))</h5>*@
+
+    <!--Html.ActionLink("عرض التفاصيل", "Details", new { CourseId = Item.Id }, new { class = "btn btn-warning" })
+        </div>
+
+    }
+
+                Styles.Render("~/Content/css")-->
+    @*</div>*@
+    @*</div>*@

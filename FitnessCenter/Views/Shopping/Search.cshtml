@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FitnessCenter.ViewModel.ItemViewModel>
+
+<head>
+
+    <link rel="stylesheet" href="~/css/products.css" />
+    <link rel="stylesheet" href="~/css/courses.css">
+</head>
+
+<script type="text/javascript">
+    function AddToCart(item) {
+        var itemId = $(item).attr("itemid");
+        var formData = new FormData();
+        formData.append("ItemId", itemId);
+        $.ajax({
+            async: true,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: formData,
+            url: '/Shopping/Index',
+            success: function (data) {
+                if (data.Success) {
+                    $("#cartItem").text(data.Counter);
+                }
+            },
+            error: function () {
+                alert("There Is Some Problem");
+            }
+
+        });
+
+    }
+
+</script>
+
+
+
+<section class="courses">
+    <div class="container">
+
+        <h1 class="panel-heading" style="text-align:right">نتائج البحث....!</h1>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3">
+                    <div class="img">
+                        <img src="~/Uploads/@item.ImagePath" alt="" />
+                    </div>
+                    <div class="info">
+                        <h5>@item.ItemName</h5>
+                        <p style="text-align:right">
+                            @item.Description.
+                        </p>
+                        <h6>@item.ItemPrice</h6>
+                        @*<button class="btn btn-border-orange">أضف الى عربة التسوق</button>*@
+                        <input type="button" name="AddToCart" value="أضف الى عربة التسوق" class="btn btn-border-orange" itemid="@item.ItemId" id="btnAddToCart" onclick="AddToCart(this)" />
+
+                    </div>
+                </div>
+
+
+            }
+
+
+        </div>
+        <p style="text-align: left">
+            @Html.ActionLink("العوده لصفحه المنتجات", "Index", null, new { @class = "padding-top: 10px; display: block;" })
+        </p>
+        <br />
+
+
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<FitnessCenter.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/products.css" />
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+</head>
+<section class="products">
+    <div class="container">
+
+        <p>
+            @Html.ActionLink("انشاء كورس جديد", "Create", null, new { @class = "btn btn-border-orange" })
+        </p>
+        <table class="table table-bordered" style="text-align:center">
+            <tr style=" color: #f58840;">
+                <th>التحكم</th>
+                <th>
+
+                    <p>اسم الكورس</p>
+                </th>
+                @*<th>
+
+            <p>محتوي الكورس</p>
+        </th>*@
+                <th>
+
+                    <p>صوره الكورس</p>
+                </th>
+                <th>
+
+                    <p>اسم الكوتش</p>
+                </th>
+                <th>
+
+                    <p>خبره الكوتش</p>
+                </th>
+                <th>
+
+                    <p>صوره الكوتش</p>
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("تفاصيل", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseTitle)
+            </td>
+            <!--<td>-->
+            @*@Html.DisplayFor(modelItem => item.courseContent)*@
+            <!--@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => item.courseContent).ToString()))
+    </td>-->
+            <td>
+                <img src="~/Uploads/@Html.DisplayFor(model=>item.courseImage)" class="thumbnail" style="width:80px;height:48px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.coachName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.coachDescribtion)
+            </td>
+            <td>
+                <img src="~/Uploads/@Html.DisplayFor(model=>item.coachImage)" class="thumbnail" style="width:80px;height:48px;" />
+            </td>
+
+        </tr>
+            }
+
+        </table>
+    </div>
+    <p style="text-align: left">
+        <a href="~/Home/Course" class="nav-link">العوده لصفحه الكورسات</a>
+    </p>
+    <br />
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

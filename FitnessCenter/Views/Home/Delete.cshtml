@@ -1,0 +1,120 @@
+﻿@model FitnessCenter.Models.ApplyForCourse
+
+
+
+<head>
+    <link href="~/css/products.css" rel="stylesheet" />
+</head>
+<section class="products">
+    <div class="container">
+        <span class="closeicon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+        </span>
+        <div class="row">
+            <h2 style="color:red">هل حقا تريد الغاء الاشتراك في هذا الكورس</h2>
+            <div class="col-md-5">
+                <div class="info">
+                    <div class="description">
+                        <h4>اسم الكورس</h4>
+                        <h6>   @Html.DisplayFor(model => model.Job.courseTitle)</h6>
+                    </div>
+                 
+                    <div class="description">
+                        <h4>تاريج التقديم</h4>
+                        <h6>    @Html.DisplayFor(model => model.ApplyDate)</h6>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div style="text-align:right">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="حذف" class="btn btn-danger" />
+                </div>
+            }
+        <p style="text-align: left">
+            <a href="~/Home/GetCourseByUser" class="nav-link">العوده للصفحه التحكم</a>
+            @*<a href="~/Views/Home/GetCourseByUser.cshtml">~/Views/Home/GetCourseByUser.cshtml</a>*@
+        </p>
+        </div>
+
+    </div>
+    <br />
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ApplyForCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.courseTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.courseTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplyDate)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "GetCourseByUser", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>*@

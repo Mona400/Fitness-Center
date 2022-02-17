@@ -1,0 +1,103 @@
+﻿@model IEnumerable<FitnessCenter.ViewModel.OrderDetailsModel>
+@{
+    ViewBag.Title = "ShoppingCart";
+    decimal TotalAmount = 0.00M;
+}
+<head>
+    <link rel="stylesheet" href="~/css/products.css" />
+</head>
+<section class="products">
+    <div class="container">
+
+        @if (Session["CartCounter"] == null)
+        {
+            <h1 style=" text-align: center; color: #f58840; margin: 40px 0px;">لا توجد منتجات في عربه التسوق.........!</h1>
+            @*@Html.ActionLink( "ShoppingCart", "Shopping",  new { id = "cartItem" }, Session["CartCounter"])*@
+            @*@Html.ActionLink("ShoppingCart", "ShoppingCart", "Shopping", htmlAttributes: new { id = "cartItem" })*@
+            @*<a href="~/Index" class="nav-link"></a>*@
+        }
+        else
+        {
+            using (Html.BeginForm("AddOrder", "Shopping", FormMethod.Post))
+            {
+
+                <table class="table-condensed" style="width:100%">
+                    <tr>
+                        <th><p>التحكم</p></th>
+
+                        <th>
+                            <p>السعر</p>
+                        </th>
+                        <th>
+                            <p>الكميه</p>
+                        </th>
+                        <th>
+                            <p>اسم المنتج</p>
+                        </th>
+                        <th>
+                            <p>التكلفه الكليه</p>
+                        </th>
+
+                        <th>
+                            <p>صوره المنتج</p>
+                        </th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        if (item == null)
+                        {
+
+                        }
+
+                        TotalAmount += item.Total;
+                        <tr>
+                            <td style="text-align:right">
+                                @Html.ActionLink("حذف", "RemoveFromCart", new { productId = item.OrderDetailId }, new { @class = "btn btn-danger" })
+                            </td>
+                            <td style="text-align:right">
+                                @item.UnitPrice.ToString(format: "#,##0.00")
+                            </td>
+                            <td style="text-align:right">
+                                @item.Quantity.ToString(format: "#,##0")
+                            </td>
+                            <td style="padding-bottom:10px">
+                                @item.ItemName
+                            </td>
+                            <td style="text-align:right">
+                                @item.Total.ToString(format: "#,##0.00")
+                            </td>
+                            <td style="padding-bottom:10px">
+                                @*<img src="@Url.Content(item.ImagePath)" height="50px" width="50px" class="img-rounded" />*@
+                                <img src="~/Uploads/@item.ImagePath" width="80px" height="80px" class="img-rounded" />
+
+                            </td>
+
+
+
+
+
+                        </tr>
+
+                    }
+                    <tr style="border-top:2px solid maroon">
+                        <td colspan="4" style="text-align:right">
+                            <h3>السعر الكلي</h3>
+                        </td>
+                        <td style="text-align:right">
+                            <h3>@TotalAmount.ToString(format: "#,##0.00")</h3>
+                        </td>
+
+                    </tr>
+                    <tr style="text-align:right">
+                        <td colspan="5">
+                            <input type="submit" value="دفع الان" name="save" class="btn btn-border-orange" />
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+            }
+        }
+        <script src="~/js/lib/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+<head>
+    <link rel="stylesheet" href="~/css/products.css" />
+
+</head>
+<section class="products">
+    <div class="container">
+
+        <p>
+            @Html.ActionLink("انشاء شخص جديد", "Create", null, new { @class = "btn btn-border-orange" })
+        </p>
+        <table class="table">
+            
+            
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+              
+                @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+            <td style="text-align:left">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+
+        </tr>
+            }
+
+        </table>
+    </div>
+    <p style="text-align: left">
+        <a href="~/Home/Index" class="nav-link">العوده لصفحه الرئيسيه</a>
+    </p>
+    <br />
+</section>
+<script src="~/js/lib/bootstrap.bundle.min.js"></script>

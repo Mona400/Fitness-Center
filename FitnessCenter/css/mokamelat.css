@@ -1,0 +1,196 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  direction: rtl !important;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.fav {
+  background-color: #f58840;
+  color: white !important;
+  width: 400px;
+  padding: 5px 8px;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.fav2 {
+  background-color: #f58840;
+  color: white !important;
+  width: 300px;
+  margin: auto;
+  padding: 5px 8px;
+  border-radius: 20px;
+}
+
+.mokamelat {
+  margin-top: 140px;
+}
+
+.mokamelat .container a {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px #f58840;
+  text-align: center !important;
+  margin-top: 10px;
+  color: black;
+}
+
+.mokamelat .container .row {
+  margin-top: 30px;
+}
+
+.mokamelat .container .row .col-md-3 {
+  margin-bottom: 40px;
+}
+
+.mokamelat .container .row .col-md-3 .img {
+  width: 80%;
+  margin: auto;
+}
+
+.mokamelat .container .row .col-md-3 .img img {
+  width: 100%;
+  height: 160px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .col-md-3 {
+    width: 40% !important;
+    margin: auto;
+  }
+}
+
+.why {
+  margin-top: 150px;
+}
+
+.why .container .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.why .container .top .img img {
+  width: 80px;
+  height: 80px;
+}
+
+.why .container .defination {
+  margin-top: 20px;
+}
+
+.why .container .defination > p {
+  font-weight: bold;
+  line-height: 2;
+}
+
+.why .container .defination > p span {
+  font-weight: bold;
+  font-size: 19px;
+  color: #f58840;
+}
+
+.why .container .row {
+  margin-top: 50px;
+}
+
+.why .container .row .col-md-5,
+.why .container .row .col-md-11 {
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.why .container .row .col-md-5 h3,
+.why .container .row .col-md-11 h3 {
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.why .container .row .col-md-5 p,
+.why .container .row .col-md-11 p {
+  font-weight: bold;
+  line-height: 2.2;
+}
+
+.why .container .row .col-md-5 p span,
+.why .container .row .col-md-11 p span {
+  color: #f58840;
+}
+
+.why .container .row .col-md-5 h4,
+.why .container .row .col-md-11 h4 {
+  text-align: center !important;
+  margin-bottom: 20px;
+}
+
+.why .container .row .col-md-5 table,
+.why .container .row .col-md-11 table {
+  margin-left: 13px !important;
+  text-align: center !important;
+}
+
+.why .container .row .col-md-5 ul,
+.why .container .row .col-md-11 ul {
+  line-height: 1.8;
+}
+
+.why .container .row .col-md-5 ul li,
+.why .container .row .col-md-11 ul li {
+  list-style: none;
+  font-weight: bold;
+  line-height: 2.1;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .why {
+    margin-top: 120px !important;
+  }
+  .col-md-5,
+  .defination,
+  .top {
+    width: 90% !important;
+    margin: auto !important;
+  }
+  .col-md-5 p,
+  .defination p,
+  .top p {
+    font-size: 13px !important;
+  }
+  .col-md-5 .aliencenter,
+  .defination .aliencenter,
+  .top .aliencenter {
+    text-align: center !important;
+  }
+  .col-md-5 h3,
+  .col-md-5 h4,
+  .defination h3,
+  .defination h4,
+  .top h3,
+  .top h4 {
+    font-size: 19px !important;
+  }
+  .fav {
+    width: 300px !important;
+  }
+  .fav2 {
+    width: 225px !important;
+  }
+  .col-md-5 {
+    margin-bottom: 20px !important;
+  }
+  .col-md-5 ul li {
+    font-size: 14px !important;
+    line-height: 2.5 !important;
+  }
+}
+/*# sourceMappingURL=mokamelat.css.map */
